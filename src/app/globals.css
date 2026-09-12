@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------
+   Lokal eingebundene Schriften (self-hosted, keine externen Requests)
+   Archivo (variable) – markante, breite Grotesk für Headlines
+   Inter (variable)   – ruhige, gut lesbare Schrift für Fließtext
+   --------------------------------------------------------------- */
+@font-face {
+  font-family: "Archivo Variable";
+  src: url("/fonts/archivo-variable.woff2") format("woff2-variations"),
+    url("/fonts/archivo-variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter Variable";
+  src: url("/fonts/inter-variable.woff2") format("woff2-variations"),
+    url("/fonts/inter-variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-display: "Archivo Variable", "Arial Narrow", Arial, sans-serif;
+  --font-body: "Inter Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Markenfarben */
+  --color-chalk: #f2efe8;
+  --color-chalk-dim: #e9e4d9;
+  --color-anthracite: #171716;
+  --color-anthracite-soft: #232320;
+  --color-mineral: #b8b2a8;
+  --color-mineral-light: #d8d3c8;
+  --color-ultramarine: #2447e8;
+  --color-ultramarine-dim: #1c37b8;
+  --color-terracotta: #b8684f;
+
+  --shadow-quiet: 0 1px 2px rgba(23, 23, 22, 0.06), 0 8px 24px -12px rgba(23, 23, 22, 0.18);
+
+  --ease-coat: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    /* Framer-Motion-Werte sind JS-getrieben und reagieren nicht auf die
+       obige CSS-Pauschalregel. Betroffene, dekorative Scroll-Reveals
+       werden hier gezielt per CSS in ihren Endzustand gezwungen — das
+       funktioniert unabhängig von Server/Client-Rendering-Zustand und
+       verursacht keine Hydration-Abweichungen. */
+    .hero-wipe-layer {
+      clip-path: inset(0 0 0 100%) !important;
+    }
+    .scroll-edge-line {
+      display: none !important;
+    }
+  }
+
+  body {
+    background-color: var(--color-chalk);
+    color: var(--color-anthracite);
+    font-family: var(--font-body);
+    font-feature-settings: "ss01" 1;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+    line-height: 0.98;
+  }
+
+  ::selection {
+    background: var(--color-ultramarine);
+    color: var(--color-chalk);
+  }
+
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ultramarine);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (hover: none) {
+    .hover-only {
+      display: none;
+    }
+  }
+}
+
+@layer utilities {
+  .container-edge {
+    width: 100%;
+    max-width: 88rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .container-edge {
+      padding-inline: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-edge {
+      padding-inline: 3rem;
+    }
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
