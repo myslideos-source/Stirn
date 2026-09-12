@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { services } from "@/content/services";
 import { SurfacePlaceholder } from "@/components/motion/SurfacePlaceholder";
@@ -73,11 +74,21 @@ export function Services() {
                 transition={{ duration: 0.55, ease: [0.65, 0, 0.35, 1] }}
                 className="absolute inset-0"
               >
-                <SurfacePlaceholder
-                  label={services[active]?.title ?? ""}
-                  tone="mineral"
-                  className="h-full w-full"
-                />
+                {services[active]?.image ? (
+                  <Image
+                    src={services[active].image}
+                    alt={`${services[active].title} — Detailaufnahme`}
+                    fill
+                    sizes="(min-width: 1024px) 45vw, 100vw"
+                    className="object-cover"
+                  />
+                ) : (
+                  <SurfacePlaceholder
+                    label={services[active]?.title ?? ""}
+                    tone="mineral"
+                    className="h-full w-full"
+                  />
+                )}
               </motion.div>
             </AnimatePresence>
             <div className="absolute inset-x-0 bottom-0 bg-anthracite/85 p-6">

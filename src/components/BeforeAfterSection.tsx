@@ -16,11 +16,13 @@ export function BeforeAfterSection() {
         </p>
 
         <div className="mt-12">
-          <BeforeAfterSlider />
+          <BeforeAfterSlider
+            beforeSrc="/images/vorher-wandflaeche.jpg"
+            afterSrc="/images/nachher-wandflaeche.jpg"
+            beforeAlt="Wandfläche vor der Renovierung: unbehandelter, geflickter Putzuntergrund"
+            afterAlt="Dieselbe Wandfläche nach der Renovierung: sauber gestrichen, mit neuem Bodenbelag"
+          />
         </div>
-        <p className="mt-4 text-[0.78rem] text-chalk/40">
-          Demo-Platzhalter · wird vor Veröffentlichung durch echtes Projektmaterial ersetzt.
-        </p>
       </div>
     </section>
   );

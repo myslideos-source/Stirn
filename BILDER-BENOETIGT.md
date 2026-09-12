@@ -1,10 +1,10 @@
 # Benötigte Bilder — Shotlist
 
-Diese Webseite verwendet aktuell **ausschließlich klar gekennzeichnete
-Platzhalter** (sichtbares "Platzhalter"-Label, keine erfundenen
-Referenzprojekte, keine Stockfotos mit gestellten Handwerkern). Sobald
-echtes Bildmaterial vorliegt, sind die unten genannten Motive einzeln
-aufzunehmen und die jeweilige Komponente/Datei entsprechend zu ersetzen.
+Ein Teil der Motive ist inzwischen mit bereitgestelltem Bildmaterial belegt
+(siehe Tabelle unten, Status „erledigt"). Für alle weiterhin offenen
+Positionen verwendet die Seite bewusst klar gekennzeichnete Platzhalter
+(sichtbares „Platzhalter"-Label, keine erfundenen Referenzprojekte, keine
+Stockfotos mit gestellten Handwerkern) statt Fantasiebildern.
 
 ## Grundsätze für das Fotoshooting
 
@@ -20,34 +20,42 @@ aufzunehmen und die jeweilige Komponente/Datei entsprechend zu ersetzen.
 
 | # | Motiv | Verwendung im Code | Status |
 |---|---|---|---|
-| 1 | Jürgen Stirn bei der Arbeit | Hero-Hintergrund / Über-uns-Sektion | offen |
-| 2 | Authentisches Porträt von Jürgen Stirn | `src/components/About.tsx` | offen |
-| 3 | Präzise Farbkante / Detailaufnahme eines Anstrichrands | Hero-Hintergrund, Intro-Statement | offen |
-| 4 | Vorbereitete Wandfläche (grundiert/gespachtelt) | `src/content/services.ts` → `putz-spachtel` | offen |
-| 5 | Fertiger Innenraum (gestrichene Wand/Zimmer) | Hero-Hintergrund, `services.ts` → `innenraum` | offen |
-| 6 | Fassade (vorher/nachher oder fertig) | `services.ts` → `fassade`, `projects.ts` | offen |
-| 7 | Lackierarbeit (Tür, Zarge, Heizkörper) | `services.ts` → `lackierarbeiten` | offen |
-| 8 | Vorher-Nachher-Paare (mind. 2–3 Sets) | `src/components/BeforeAfterSlider.tsx` | offen |
-| 9 | Arbeitsmaterialien in sauberer, aufgeräumter Umgebung | Leistungen / Farb- und Materialberatung | offen |
-| 10 | Fahrzeug oder Betriebssitz (falls vorhanden) | Kontakt-/Über-uns-Sektion | offen |
-| 11 | Tapezierarbeit (Untergrund/Bahn im Detail) | `services.ts` → `tapezierarbeiten` | offen |
-| 12 | 4–6 Projektfotos für die Galerie (verschiedene Formate) | `src/content/projects.ts` | offen |
+| 1 | Wortmarke „STIRN." | `src/components/Logo.tsx` (`public/images/logo-stirn.png`) | erledigt |
+| 2 | Fertiger Innenraum (Wohnraum mit Akzentwand) | Hero-Hintergrund (`public/images/hero-fertiger-innenraum.jpg`) | erledigt |
+| 3 | Präzise Farbkante / Detailaufnahme eines Anstrichrands | `services.ts` → `innenraum` (`public/images/farbkante-detail.jpg`) | erledigt |
+| 4 | Vorher-Nachher-Paar Wandfläche/Raum | `BeforeAfterSlider` (`public/images/vorher-wandflaeche.jpg`, `nachher-wandflaeche.jpg`) | erledigt |
+| 5 | Jürgen Stirn bei der Arbeit | Über-uns-Sektion | offen |
+| 6 | Authentisches Porträt von Jürgen Stirn | `src/components/About.tsx` | offen |
+| 7 | Fassade (vorher/nachher oder fertig) | `services.ts` → `fassade`, `projects.ts` | offen |
+| 8 | Lackierarbeit (Tür, Zarge, Heizkörper) | `services.ts` → `lackierarbeiten` | offen |
+| 9 | Tapezierarbeit (Untergrund/Bahn im Detail) | `services.ts` → `tapezierarbeiten` | offen |
+| 10 | Putz-/Spachtelarbeit im Detail | `services.ts` → `putz-spachtel` | offen |
+| 11 | Arbeitsmaterialien in sauberer, aufgeräumter Umgebung | `services.ts` → `farbberatung` | offen |
+| 12 | Fahrzeug oder Betriebssitz (falls vorhanden) | Kontakt-/Über-uns-Sektion | offen |
+| 13 | 4–6 Projektfotos für die Galerie (verschiedene Formate) | `src/content/projects.ts` | offen |
+| 14 | Weitere Vorher-Nachher-Paare (mind. 2 zusätzliche Sets) | `BeforeAfterSlider` | offen |
+
+**Hinweis zu den erledigten Positionen:** Die Herkunft der bereitgestellten
+Fotos (1–4) — ob eigene Aufnahmen des Betriebs oder Referenzmaterial zur
+Veranschaulichung des Layouts — ist vor Veröffentlichung zu bestätigen.
+Insbesondere Vorher-Nachher-Paar und Hero-Foto sollten, sobald verfügbar,
+durch tatsächlich beim Betrieb entstandene Aufnahmen ersetzt werden, damit
+die Seite ausschließlich echte eigene Referenzen zeigt.
 
 ## Wo Platzhalter aktuell eingesetzt werden
 
-Alle Bild-Platzhalter laufen über die Komponente
+Alle noch offenen Bild-Platzhalter laufen über die Komponente
 `src/components/motion/SurfacePlaceholder.tsx`. Sie zeigt eine dezente,
-mineralisch wirkende Fläche mit einem sichtbaren "Platzhalter"-Label — kein
+mineralisch wirkende Fläche mit einem sichtbaren „Platzhalter"-Label — kein
 grauer Kasten, kein Stockfoto. Sobald echte Fotos vorliegen, kann diese
 Komponente an den jeweiligen Stellen 1:1 durch `next/image` mit dem realen
-Bildpfad ersetzt werden.
+Bildpfad ersetzt werden (siehe `services.ts` → `image`-Feld und
+`BeforeAfterSlider`-Props `beforeSrc`/`afterSrc` als Beispiel).
 
-Betroffene Stellen:
+Noch betroffene Stellen:
 
-- `src/components/Hero.tsx` — Hero-Hintergrund
-- `src/components/Services.tsx` — Oberflächendetail je Leistung
-- `src/components/BeforeAfterSlider.tsx` — Vorher/Nachher-Demobilder
-- `src/components/ProjectGallery.tsx` — Projektbilder in Galerie und Detailansicht
+- `src/components/Services.tsx` — Oberflächendetail für 5 der 6 Leistungen
+- `src/components/ProjectGallery.tsx` — sämtliche Projektbilder (Galerie und Detailansicht)
 - `src/components/About.tsx` — Porträt
 
 ## Projekt- und Referenzdaten

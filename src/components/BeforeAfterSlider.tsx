@@ -1,21 +1,30 @@
 "use client";
 
 import { useCallback, useRef, useState } from "react";
+import Image from "next/image";
 import { SurfacePlaceholder } from "@/components/motion/SurfacePlaceholder";
 
 type BeforeAfterSliderProps = {
   beforeLabel?: string;
   afterLabel?: string;
+  beforeSrc?: string;
+  afterSrc?: string;
+  beforeAlt?: string;
+  afterAlt?: string;
 };
 
 /**
  * Vorher-Nachher-Slider. Maus-Drag, Touch-Drag und Tastatur (Pfeiltasten,
- * Pos1/Ende) werden unterstützt. Solange keine echten Projektfotos
- * vorliegen, werden klar gekennzeichnete Platzhalter verwendet.
+ * Pos1/Ende) werden unterstützt. Ohne beforeSrc/afterSrc werden klar
+ * gekennzeichnete Platzhalter verwendet.
  */
 export function BeforeAfterSlider({
   beforeLabel = "Vorher",
   afterLabel = "Nachher",
+  beforeSrc,
+  afterSrc,
+  beforeAlt = "Vorher-Aufnahme",
+  afterAlt = "Nachher-Aufnahme",
 }: BeforeAfterSliderProps) {
   const [value, setValue] = useState(50);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -72,12 +81,20 @@ export function BeforeAfterSlider({
     >
       {/* Nachher — volle Fläche im Hintergrund */}
       <div className="absolute inset-0">
-        <SurfacePlaceholder label="Nachher-Aufnahme" tone="chalk" className="h-full w-full" />
+        {afterSrc ? (
+          <Image src={afterSrc} alt={afterAlt} fill sizes="(min-width: 640px) 80vw, 100vw" className="object-cover" />
+        ) : (
+          <SurfacePlaceholder label="Nachher-Aufnahme" tone="chalk" className="h-full w-full" />
+        )}
       </div>
 
       {/* Vorher — von rechts geclippt entsprechend value */}
       <div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - value}% 0 0)` }}>
-        <SurfacePlaceholder label="Vorher-Aufnahme" tone="mineral" className="h-full w-full" />
+        {beforeSrc ? (
+          <Image src={beforeSrc} alt={beforeAlt} fill sizes="(min-width: 640px) 80vw, 100vw" className="object-cover" />
+        ) : (
+          <SurfacePlaceholder label="Vorher-Aufnahme" tone="mineral" className="h-full w-full" />
+        )}
       </div>
 
       <span className="pointer-events-none absolute left-4 top-4 bg-anthracite/80 px-3 py-1 text-[0.72rem] font-medium uppercase tracking-[0.1em] text-chalk">

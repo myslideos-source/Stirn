@@ -16,6 +16,8 @@ export type Service = {
   detail: string;
   /** Bild-Platzhalter-ID für das Oberflächendetail, siehe BILDER-BENOETIGT.md */
   imagePlaceholder: string;
+  /** Optionaler Pfad zu einem echten Foto (public/). Fehlt er, wird der Platzhalter gezeigt. */
+  image?: string;
 };
 
 export const services: Service[] = [
@@ -27,6 +29,7 @@ export const services: Service[] = [
     detail:
       "Von der Einzelwand bis zur kompletten Wohnung: Untergrundprüfung, saubere Abdeckung und ein gleichmäßiger, deckender Anstrich, abgestimmt auf Raum und Lichtsituation.",
     imagePlaceholder: "leistung-innenraum",
+    image: "/images/farbkante-detail.jpg",
   },
   {
     number: "02",

@@ -1,11 +1,11 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Star } from "lucide-react";
 import { LineReveal } from "@/components/motion/LineReveal";
 import { CoatingLink } from "@/components/motion/CoatingButton";
-import { SurfacePlaceholder } from "@/components/motion/SurfacePlaceholder";
 import { site } from "@/content/site";
 
 export function Hero() {
@@ -28,12 +28,19 @@ export function Hero() {
       ref={ref}
       className="relative flex min-h-[100svh] flex-col overflow-hidden bg-anthracite"
     >
-      {/* Hintere Ebene: fertig gestalteter Raum / Farbkante (Platzhalter) */}
+      {/* Hintere Ebene: fertig gestalteter Innenraum */}
       <div className="absolute inset-0">
-        <SurfacePlaceholder
-          label="Hero-Hintergrund: fertiger Innenraum"
-          tone="anthracite"
-          className="h-full w-full"
+        <Image
+          src="/images/hero-fertiger-innenraum.jpg"
+          alt="Fertig gestalteter Wohnraum mit ultramarinblauer Akzentwand"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-t from-anthracite/85 via-anthracite/25 to-anthracite/10"
         />
       </div>
 

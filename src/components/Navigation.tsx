@@ -65,7 +65,7 @@ export function Navigation() {
           }`}
         >
           <a href="#top" className="shrink-0" aria-label="STIRN. Malerbetrieb — Startseite">
-            <Logo tone="dark" />
+            <Logo tone="dark" priority />
           </a>
 
           <ul className="hidden items-center gap-9 lg:flex">

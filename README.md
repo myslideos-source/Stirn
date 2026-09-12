@@ -29,7 +29,7 @@ Alle redaktionellen Inhalte liegen zentral in `src/content/`:
 ## Offene Punkte vor Veröffentlichung
 
 1. **E-Mail-Versand einrichten** — siehe Kommentar in `src/app/api/contact/route.ts`. Ohne konfigurierten Dienst validiert das Formular zwar vollständig, stellt Anfragen aber nicht zu (bewusst, um keine erfolgreiche Übertragung vorzutäuschen).
-2. **Bilder ersetzen** — siehe `BILDER-BENOETIGT.md` für die vollständige Shotlist. Alle Platzhalter laufen über `src/components/motion/SurfacePlaceholder.tsx`.
+2. **Weitere Bilder ergänzen** — Logo, Hero-Foto, ein Leistungsdetail sowie ein Vorher-Nachher-Paar sind bereits eingebunden. Für die restlichen Motive (Porträt, Projektgalerie, weitere Leistungsdetails) siehe `BILDER-BENOETIGT.md`. Alle noch offenen Platzhalter laufen über `src/components/motion/SurfacePlaceholder.tsx`.
 3. **Rechtliche Pflichtangaben ergänzen** — orange markierte Platzhalter in `/impressum` und `/datenschutz`.
 4. **Domain** — `site.url` in `src/content/site.ts` auf die finale Domain setzen (wirkt sich auf Sitemap, Canonical-URLs und Schema.org aus).
 
