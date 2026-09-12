@@ -72,9 +72,6 @@
        werden hier gezielt per CSS in ihren Endzustand gezwungen — das
        funktioniert unabhängig von Server/Client-Rendering-Zustand und
        verursacht keine Hydration-Abweichungen. */
-    .hero-wipe-layer {
-      clip-path: inset(0 0 0 100%) !important;
-    }
     .scroll-edge-line {
       display: none !important;
     }

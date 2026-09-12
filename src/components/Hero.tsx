@@ -1,34 +1,15 @@
 "use client";
 
-import { useRef } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
 import { Star } from "lucide-react";
 import { LineReveal } from "@/components/motion/LineReveal";
 import { CoatingLink } from "@/components/motion/CoatingButton";
 import { site } from "@/content/site";
 
 export function Hero() {
-  const ref = useRef<HTMLDivElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-
-  const wipe = useTransform(scrollYProgress, [0, 0.55], [0, 100]);
-  const clipPath = useTransform(wipe, (v) => `inset(0 0 0 ${v}%)`);
-  const edgeLeft = useTransform(wipe, (v) => `${v}%`);
-  const edgeOpacity = useTransform(wipe, [0, 4, 96, 100], [0, 1, 1, 0]);
-  const textColor = useTransform(scrollYProgress, [0, 0.18, 0.4], ["#171716", "#171716", "#F2EFE8"]);
-
   return (
-    <section
-      id="top"
-      ref={ref}
-      className="relative flex min-h-[100svh] flex-col overflow-hidden bg-anthracite"
-    >
-      {/* Hintere Ebene: fertig gestalteter Innenraum */}
+    <section id="top" className="relative flex min-h-[100svh] flex-col overflow-hidden bg-anthracite">
+      {/* Hintergrund: fertig gestalteter Innenraum — von Anfang an sichtbar */}
       <div className="absolute inset-0">
         <Image
           src="/images/hero-fertiger-innenraum.jpg"
@@ -44,29 +25,9 @@ export function Hero() {
         />
       </div>
 
-      {/* Vordere Ebene: warmes, mineralisches Off-White — wird beim Scrollen weggezogen.
-          Bei prefers-reduced-motion wird die Fläche per CSS (globals.css) sofort
-          vollständig ausgeblendet, siehe .hero-wipe-layer. */}
-      <motion.div className="hero-wipe-layer absolute inset-0 bg-chalk" style={{ clipPath }}>
-        <div
-          aria-hidden
-          className="h-full w-full opacity-[0.5]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 20% 30%, rgba(184,178,168,0.5), transparent 55%), radial-gradient(circle at 75% 65%, rgba(184,178,168,0.35), transparent 50%)",
-          }}
-        />
-      </motion.div>
-
-      <motion.div
-        aria-hidden
-        className="scroll-edge-line absolute inset-y-0 z-10 w-[3px] bg-ultramarine"
-        style={{ left: edgeLeft, opacity: edgeOpacity }}
-      />
-
       <div className="relative z-20 flex flex-1 flex-col justify-end">
         <div className="container-edge pb-16 pt-32 sm:pb-24 sm:pt-40">
-          <motion.div style={{ color: textColor }} className="max-w-3xl text-chalk">
+          <div className="max-w-3xl text-chalk">
             <p className="mb-5 text-[0.78rem] font-semibold uppercase tracking-[0.22em] opacity-80">
               Malermeisterbetrieb · Fichtenau
             </p>
@@ -86,7 +47,7 @@ export function Hero() {
               <CoatingLink href="#anfrage" variant="solid" className="bg-ultramarine text-chalk">
                 Projekt unverbindlich anfragen
               </CoatingLink>
-              <CoatingLink href={site.phone.href} variant="outline">
+              <CoatingLink href={site.phone.href} variant="outline" className="border-chalk/35 text-chalk">
                 {site.phone.display} anrufen
               </CoatingLink>
             </div>
@@ -107,7 +68,7 @@ export function Hero() {
                 <span className="underline underline-offset-2">laut {site.rating.source}</span>
               </span>
             </a>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
