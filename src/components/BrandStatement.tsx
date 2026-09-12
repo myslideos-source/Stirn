@@ -11,7 +11,7 @@ export function BrandStatement() {
         <div className="relative mx-auto max-w-4xl">
           <motion.span
             aria-hidden
-            className="absolute -left-5 top-0 hidden h-full w-[2px] bg-ultramarine sm:block"
+            className="absolute -left-5 top-0 hidden h-full w-[2px] bg-brand sm:block"
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true, amount: 0.5 }}

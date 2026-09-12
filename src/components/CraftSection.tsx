@@ -33,7 +33,7 @@ export function CraftSection() {
           <ul className="mt-8 flex flex-col gap-3">
             {points.map((point) => (
               <li key={point} className="flex items-center gap-3 text-[0.98rem] text-anthracite/80">
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center bg-ultramarine/10 text-ultramarine">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center bg-brand/10 text-brand">
                   <Check className="h-3.5 w-3.5" strokeWidth={2.5} />
                 </span>
                 {point}

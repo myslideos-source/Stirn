@@ -79,7 +79,7 @@ export function Navigation() {
                   {activeHash === item.href && (
                     <motion.span
                       layoutId="nav-active-edge"
-                      className="absolute -bottom-0.5 left-0 right-0 h-[2px] bg-ultramarine"
+                      className="absolute -bottom-0.5 left-0 right-0 h-[2px] bg-brand"
                       transition={{ duration: 0.4, ease: [0.65, 0, 0.35, 1] }}
                     />
                   )}

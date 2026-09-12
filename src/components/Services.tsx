@@ -21,7 +21,7 @@ export function Services() {
                 href="#kontakt"
                 className="flex items-center gap-6 py-8 transition-colors hover:bg-anthracite/[0.03] sm:gap-10 sm:py-10"
               >
-                <span className="font-display text-sm font-semibold text-ultramarine sm:text-base">
+                <span className="font-display text-sm font-semibold text-brand sm:text-base">
                   {service.number}
                 </span>
                 <span className="flex-1">
@@ -33,7 +33,7 @@ export function Services() {
                   </span>
                 </span>
                 <ArrowUpRight
-                  className="h-6 w-6 shrink-0 text-anthracite/40 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-ultramarine sm:h-7 sm:w-7"
+                  className="h-6 w-6 shrink-0 text-anthracite/40 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-brand sm:h-7 sm:w-7"
                   strokeWidth={1.5}
                   aria-hidden
                 />

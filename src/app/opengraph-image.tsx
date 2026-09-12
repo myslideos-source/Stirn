@@ -27,7 +27,7 @@ export default function OpengraphImage() {
               width: 20,
               height: 20,
               borderRadius: "50%",
-              background: "#2457FF",
+              background: "#6EBB13",
               marginTop: 44,
             }}
           />

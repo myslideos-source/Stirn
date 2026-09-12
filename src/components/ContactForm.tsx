@@ -118,7 +118,7 @@ export function ContactForm() {
 
         <button
           type="submit"
-          className="group relative mt-1 flex w-fit items-center gap-2 overflow-hidden bg-ultramarine px-7 py-3.5 text-[0.9rem] font-medium text-chalk"
+          className="group relative mt-1 flex w-fit items-center gap-2 overflow-hidden bg-brand px-7 py-3.5 text-[0.9rem] font-medium text-chalk"
         >
           <span
             aria-hidden
@@ -170,7 +170,7 @@ function Field({
 }
 
 function inputClass(hasError: boolean) {
-  return `w-full border bg-chalk px-4 py-2.5 text-[0.92rem] text-anthracite outline-none transition-colors focus:border-ultramarine ${
+  return `w-full border bg-chalk px-4 py-2.5 text-[0.92rem] text-anthracite outline-none transition-colors focus:border-brand ${
     hasError ? "border-red-400" : "border-anthracite/20"
   }`;
 }

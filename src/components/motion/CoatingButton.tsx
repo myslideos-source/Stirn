@@ -24,14 +24,14 @@ const variants: Record<NonNullable<CommonProps["variant"]>, string> = {
 
 /**
  * Button mit "Beschichtungsbewegung": beim Hover läuft eine Farbkante
- * (Ultramarin) einmal von links durch den Button. Rein CSS-getrieben
+ * (Markengrün) einmal von links durch den Button. Rein CSS-getrieben
  * (transform), damit auch Touch-Geräte ohne Hover-Kosten auskommen.
  */
 function CoatingSurface({ variant = "solid" }: { variant?: CommonProps["variant"] }) {
   return (
     <span
       aria-hidden
-      className="coating-sweep absolute inset-0 -translate-x-full bg-ultramarine transition-transform duration-500 ease-[cubic-bezier(.65,0,.35,1)] group-hover:translate-x-0"
+      className="coating-sweep absolute inset-0 -translate-x-full bg-brand transition-transform duration-500 ease-[cubic-bezier(.65,0,.35,1)] group-hover:translate-x-0"
       style={{ opacity: variant === "outline" || variant === "ghost" ? 0.08 : 1 }}
     />
   );

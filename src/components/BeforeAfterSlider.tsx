@@ -106,7 +106,7 @@ export function BeforeAfterSlider({
 
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-y-0 w-[2px] bg-ultramarine"
+        className="pointer-events-none absolute inset-y-0 w-[2px] bg-brand"
         style={{ left: `${value}%`, transform: "translateX(-1px)" }}
       />
 
@@ -118,7 +118,7 @@ export function BeforeAfterSlider({
         aria-valuemin={0}
         aria-valuemax={100}
         onKeyDown={onKeyDown}
-        className="absolute top-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 cursor-ew-resize items-center justify-center rounded-full border border-anthracite/10 bg-chalk shadow-quiet focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ultramarine"
+        className="absolute top-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 cursor-ew-resize items-center justify-center rounded-full border border-anthracite/10 bg-chalk shadow-quiet focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
         style={{ left: `${value}%` }}
       >
         <svg width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden>

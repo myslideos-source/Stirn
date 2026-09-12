@@ -62,7 +62,7 @@ export function Hero() {
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
-              <CoatingLink href="#kontakt" variant="solid" className="bg-ultramarine text-chalk">
+              <CoatingLink href="#kontakt" variant="solid" className="bg-brand text-chalk">
                 Projekt anfragen
               </CoatingLink>
               <CoatingLink href={site.phone.href} variant="outline" className="border-chalk/35 text-chalk">

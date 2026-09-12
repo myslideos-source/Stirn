@@ -24,7 +24,7 @@ export function ProcessSteps() {
         <div ref={ref} className="relative mt-16 sm:mt-20">
           <div className="absolute left-[18px] top-2 bottom-2 w-[2px] bg-anthracite/10 sm:left-[27px]" />
           <motion.div
-            className="scroll-edge-line absolute left-[18px] top-2 w-[2px] origin-top bg-ultramarine sm:left-[27px]"
+            className="scroll-edge-line absolute left-[18px] top-2 w-[2px] origin-top bg-brand sm:left-[27px]"
             style={{ scaleY: scrollYProgress, bottom: "0.5rem" }}
           />
 
