@@ -2,19 +2,9 @@
 
 /* ---------------------------------------------------------------
    Lokal eingebundene Schriften (self-hosted, keine externen Requests)
-   Archivo (variable) – markante, breite Grotesk für Headlines
-   Inter (variable)   – ruhige, gut lesbare Schrift für Fließtext
+   Inter (variable)            – Hauptschrift für Headlines und Fließtext
+   Instrument Serif (+ kursiv) – Akzentschrift für einzelne emotionale Begriffe
    --------------------------------------------------------------- */
-@font-face {
-  font-family: "Archivo Variable";
-  src: url("/fonts/archivo-variable.woff2") format("woff2-variations"),
-    url("/fonts/archivo-variable.woff2") format("woff2");
-  font-weight: 100 900;
-  font-stretch: 75% 125%;
-  font-style: normal;
-  font-display: swap;
-}
-
 @font-face {
   font-family: "Inter Variable";
   src: url("/fonts/inter-variable.woff2") format("woff2-variations"),
@@ -24,20 +14,36 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("/fonts/instrument-serif.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("/fonts/instrument-serif-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
 @theme {
-  --font-display: "Archivo Variable", "Arial Narrow", Arial, sans-serif;
+  --font-display: "Inter Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-body: "Inter Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-accent: "Instrument Serif", Georgia, "Times New Roman", serif;
 
   /* Markenfarben */
-  --color-chalk: #f2efe8;
-  --color-chalk-dim: #e9e4d9;
+  --color-chalk: #f4f1ea;
+  --color-chalk-dim: #ebe6db;
   --color-anthracite: #171716;
   --color-anthracite-soft: #232320;
-  --color-mineral: #b8b2a8;
-  --color-mineral-light: #d8d3c8;
-  --color-ultramarine: #2447e8;
-  --color-ultramarine-dim: #1c37b8;
-  --color-terracotta: #b8684f;
+  --color-mineral: #d7d4ce;
+  --color-mineral-light: #e6e3dc;
+  --color-ultramarine: #2457ff;
+  --color-ultramarine-dim: #1b42c9;
 
   --shadow-quiet: 0 1px 2px rgba(23, 23, 22, 0.06), 0 8px 24px -12px rgba(23, 23, 22, 0.18);
 
@@ -68,12 +74,15 @@
     }
 
     /* Framer-Motion-Werte sind JS-getrieben und reagieren nicht auf die
-       obige CSS-Pauschalregel. Betroffene, dekorative Scroll-Reveals
+       obige CSS-Pauschalregel. Betroffene, dekorative Scroll-Effekte
        werden hier gezielt per CSS in ihren Endzustand gezwungen — das
        funktioniert unabhängig von Server/Client-Rendering-Zustand und
        verursacht keine Hydration-Abweichungen. */
     .scroll-edge-line {
       display: none !important;
+    }
+    .parallax-layer {
+      transform: none !important;
     }
   }
 
@@ -91,8 +100,8 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.01em;
-    line-height: 0.98;
+    letter-spacing: -0.015em;
+    line-height: 1.02;
   }
 
   ::selection {
@@ -140,6 +149,11 @@
 
   .text-balance {
     text-wrap: balance;
+  }
+
+  .font-accent {
+    font-family: var(--font-accent);
+    font-style: italic;
   }
 
   .no-scrollbar::-webkit-scrollbar {

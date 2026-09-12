@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "STIRN. Malerbetrieb Fichtenau — Räume, die bleiben.";
+export const alt = "BRUNNER. Malermeister Crailsheim — Räume, die bleiben.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -18,24 +18,24 @@ export default function OpengraphImage() {
           padding: "80px",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <div style={{ fontSize: 120, fontWeight: 800, color: "#F2EFE8", letterSpacing: -4 }}>
-            STIRN
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <div style={{ fontSize: 120, fontWeight: 800, color: "#F4F1EA", letterSpacing: -4 }}>
+            BRUNNER
           </div>
           <div
             style={{
-              width: 34,
-              height: 34,
-              background: "#2447E8",
-              transform: "rotate(45deg)",
-              marginTop: 20,
+              width: 20,
+              height: 20,
+              borderRadius: "50%",
+              background: "#2457FF",
+              marginTop: 44,
             }}
           />
         </div>
-        <div style={{ fontSize: 26, color: "#B8B2A8", letterSpacing: 2, marginTop: 12, display: "flex" }}>
-          MALERBETRIEB · FICHTENAU
+        <div style={{ fontSize: 26, color: "#D7D4CE", letterSpacing: 2, marginTop: 12, display: "flex" }}>
+          MALERMEISTER · CRAILSHEIM
         </div>
-        <div style={{ fontSize: 32, color: "#F2EFE8", opacity: 0.85, marginTop: 40, display: "flex" }}>
+        <div style={{ fontSize: 32, color: "#F4F1EA", opacity: 0.85, marginTop: 40, display: "flex" }}>
           Räume, die bleiben.
         </div>
       </div>

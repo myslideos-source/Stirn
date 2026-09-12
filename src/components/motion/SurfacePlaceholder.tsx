@@ -5,9 +5,9 @@ type SurfacePlaceholderProps = {
 };
 
 const tones: Record<NonNullable<SurfacePlaceholderProps["tone"]>, string> = {
-  chalk: "from-[#efeadf] via-[#e6e0d3] to-[#d9d2c2]",
+  chalk: "from-[#f0ede6] via-[#e9e5dc] to-[#dcd8cd]",
   anthracite: "from-[#232320] via-[#171716] to-[#0e0e0d]",
-  mineral: "from-[#c7c1b6] via-[#b8b2a8] to-[#a49e93]",
+  mineral: "from-[#e0ddd5] via-[#d7d4ce] to-[#c3bfb6]",
 };
 
 /**

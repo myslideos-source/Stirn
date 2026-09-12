@@ -11,7 +11,7 @@ export function Footer() {
           <div>
             <Logo tone="light" />
             <p className="mt-5 max-w-[16rem] text-[0.85rem] leading-relaxed text-chalk/55">
-              Wir verändern nicht nur Wände. Wir verändern Räume.
+              Aus Fläche wird Atmosphäre.
             </p>
           </div>
 
@@ -27,11 +27,6 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link href="/#anfrage" className="text-[0.88rem] text-chalk/70 transition-colors hover:text-chalk">
-                  Projekt anfragen
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -47,6 +42,7 @@ export function Footer() {
               <a href={site.phone.href} className="transition-colors hover:text-chalk">
                 {site.phone.display}
               </a>
+              <span className="text-chalk/50">Fax {site.fax.display}</span>
               <a href={site.email.href} className="transition-colors hover:text-chalk">
                 {site.email.display}
               </a>
@@ -70,15 +66,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-chalk/10 pt-6 text-[0.75rem] text-chalk/40 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 border-t border-chalk/10 pt-6 text-[0.75rem] text-chalk/40">
           <p>
             © {new Date().getFullYear()} {site.legalName}
-          </p>
-          <p>
-            Bewertung {site.rating.value.toFixed(1).replace(".", ",")}/5 laut{" "}
-            <a href={site.rating.sourceUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
-              {site.rating.source}
-            </a>
           </p>
         </div>
       </div>

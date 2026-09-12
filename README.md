@@ -1,6 +1,6 @@
-# STIRN. Malerbetrieb — Webseite
+# BRUNNER. Malermeister — Webseite
 
-Premium-Webseite für den Jürgen Stirn Malerbetrieb in Fichtenau. Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4, Framer Motion.
+Premium-Webseite für Markus Brunner Malermeister in Crailsheim-Tiefenbach. Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4, Framer Motion.
 
 ## Entwicklung
 
@@ -20,26 +20,38 @@ npm run lint    # ESLint
 
 Alle redaktionellen Inhalte liegen zentral in `src/content/`:
 
-- `site.ts` — Name, Adresse, Telefon, E-Mail, Bewertung (NAP-Daten)
+- `site.ts` — Name, Adresse, Telefon, Fax, E-Mail (NAP-Daten)
 - `services.ts` — Leistungen (mit dem Betrieb abzustimmen)
-- `projects.ts` — Projektgalerie (aktuell ausschließlich Platzhalter)
 - `process.ts` — Ablauf-Schritte
-- `form-options.ts` — Auswahloptionen im Anfrageformular
+
+## Kontaktformular
+
+Das Formular im Bereich „Kontakt“ hat **kein Server-Backend**. Beim Absenden öffnet es
+das E-Mail-Programm des Besuchers mit einer vorausgefüllten Nachricht an
+`m.brunner@malerbetrieb-brunner.de` (siehe `src/components/ContactForm.tsx`). Das ist
+bewusst so gewählt und im Formular selbst sowie in der Datenschutzerklärung
+transparent erklärt — es wird nichts automatisch übertragen oder gespeichert.
 
 ## Offene Punkte vor Veröffentlichung
 
-1. **E-Mail-Versand einrichten** — siehe Kommentar in `src/app/api/contact/route.ts`. Ohne konfigurierten Dienst validiert das Formular zwar vollständig, stellt Anfragen aber nicht zu (bewusst, um keine erfolgreiche Übertragung vorzutäuschen).
-2. **Weitere Bilder ergänzen** — Logo, Hero-Foto, ein Leistungsdetail sowie ein Vorher-Nachher-Paar sind bereits eingebunden. Für die restlichen Motive (Porträt, Projektgalerie, weitere Leistungsdetails) siehe `BILDER-BENOETIGT.md`. Alle noch offenen Platzhalter laufen über `src/components/motion/SurfacePlaceholder.tsx`.
-3. **Rechtliche Pflichtangaben ergänzen** — orange markierte Platzhalter in `/impressum` und `/datenschutz`.
-4. **Domain** — `site.url` in `src/content/site.ts` auf die finale Domain setzen (wirkt sich auf Sitemap, Canonical-URLs und Schema.org aus).
+1. **Fassadenfoto ergänzen** — für die Sektion „Außen geschützt. Innen angekommen.“
+   fehlt noch ein echtes Foto unter `public/images/facade.webp`
+   (siehe `src/components/FacadeSection.tsx`). In dieser Entwicklungsumgebung bestand
+   kein Netzwerkzugriff auf Bilddatenbanken wie Unsplash/Pexels, daher zeigt die Sektion
+   aktuell einen klar gekennzeichneten Platzhalter.
+2. **Übrige Bilder prüfen** — siehe `BILDER-BENOETIGT.md`.
+3. **Rechtliche Pflichtangaben ergänzen** — gelb markierte Platzhalter in `/impressum`
+   und `/datenschutz` (Rechtsform, Handwerkskammer, USt-ID, Hosting-Anbieter).
+4. **Domain bestätigen** — `site.url` in `src/content/site.ts` ist auf
+   `https://www.malerbetrieb-brunner.de` gesetzt; vor dem Deploy prüfen, dass dies die
+   tatsächliche Ziel-Domain ist.
 
 ## Struktur
 
 ```
-src/app/              Next.js App Router (Seiten, Layout, API-Route, SEO-Dateien)
+src/app/              Next.js App Router (Seiten, Layout, SEO-Dateien)
 src/components/        UI-Komponenten
 src/components/motion/ Wiederverwendbare Animations-/Reveal-Komponenten
 src/content/            Zentrale, pflegbare Inhalte
-src/lib/                Validierungslogik (Formular)
 src/hooks/              Custom Hooks
 ```

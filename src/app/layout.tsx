@@ -6,18 +6,18 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Malermeister Jürgen Stirn | Malerbetrieb in Fichtenau",
-    template: "%s | STIRN. Malerbetrieb Fichtenau",
+    default: "Malerbetrieb Brunner | Malermeister in Crailsheim",
+    template: "%s | BRUNNER. Malermeister Crailsheim",
   },
   description:
-    "Jürgen Stirn Malerbetrieb in Fichtenau – persönliche Beratung, sorgfältige Malerarbeiten und hochwertige Oberflächen. Jetzt Projekt unverbindlich anfragen.",
+    "Markus Brunner Malermeister in Crailsheim-Tiefenbach – Malerarbeiten, Fassaden, Lackier- und Tapezierarbeiten. Jetzt Projekt anfragen.",
   keywords: [
-    "Maler Fichtenau",
-    "Malerbetrieb Fichtenau",
-    "Malermeister Fichtenau",
     "Maler Crailsheim",
-    "Fassadenanstrich Fichtenau",
-    "Malerarbeiten Innenraum",
+    "Malerbetrieb Crailsheim",
+    "Malermeister Crailsheim",
+    "Fassadenanstrich Crailsheim",
+    "Malerarbeiten Innenraum Crailsheim",
+    "Maler Tiefenbach",
   ],
   alternates: {
     canonical: "/",
@@ -26,16 +26,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "de_DE",
     url: site.url,
-    siteName: "STIRN. Malerbetrieb Fichtenau",
-    title: "Malermeister Jürgen Stirn | Malerbetrieb in Fichtenau",
+    siteName: "BRUNNER. Malermeister Crailsheim",
+    title: "Malerbetrieb Brunner | Malermeister in Crailsheim",
     description:
-      "Persönliches Malerhandwerk aus Fichtenau: Innenraum, Fassade, Lackierung, Tapezierarbeiten und Farbberatung.",
+      "Malerarbeiten mit Gespür für Farbe, Material und Raum – für private und gewerbliche Projekte in Crailsheim und Umgebung.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Malermeister Jürgen Stirn | Malerbetrieb in Fichtenau",
+    title: "Malerbetrieb Brunner | Malermeister in Crailsheim",
     description:
-      "Persönliches Malerhandwerk aus Fichtenau: Innenraum, Fassade, Lackierung, Tapezierarbeiten und Farbberatung.",
+      "Malerarbeiten mit Gespür für Farbe, Material und Raum – für private und gewerbliche Projekte in Crailsheim und Umgebung.",
   },
   robots: {
     index: true,
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#f2efe8",
+  themeColor: "#f4f1ea",
 };
 
 const localBusinessSchema = {
@@ -61,18 +61,13 @@ const localBusinessSchema = {
     "@type": "PostalAddress",
     streetAddress: site.address.street,
     postalCode: site.address.zip,
-    addressLocality: site.address.city,
+    addressLocality: "Crailsheim",
     addressRegion: site.address.region,
     addressCountry: site.address.country,
   },
   areaServed: {
     "@type": "City",
-    name: site.address.city,
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: site.rating.value,
-    reviewCount: site.rating.count,
+    name: "Crailsheim",
   },
   founder: {
     "@type": "Person",

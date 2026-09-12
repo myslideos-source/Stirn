@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 
-export function IntroStatement() {
+export function BrandStatement() {
   const reduced = useReducedMotion();
 
   return (
@@ -18,13 +18,13 @@ export function IntroStatement() {
             transition={{ duration: reduced ? 0.01 : 1, ease: [0.65, 0, 0.35, 1] }}
             style={{ transformOrigin: "top" }}
           />
-          <p className="text-balance font-display text-[1.9rem] font-medium leading-[1.2] tracking-tight text-anthracite sm:text-[2.5rem] md:text-[2.9rem]">
-            „Ein guter Anstrich fällt nicht durch Lautstärke auf. Sondern dadurch, dass am
-            Ende alles stimmt.“
+          <p className="text-balance font-display text-[1.9rem] font-medium leading-[1.25] tracking-tight text-anthracite sm:text-[2.5rem] md:text-[2.9rem]">
+            Aus Fläche wird <span className="font-accent">Atmosphäre.</span>
           </p>
           <p className="mt-8 max-w-xl text-[1.05rem] leading-relaxed text-anthracite/70">
-            Vom ersten Gespräch bis zur sauberen Übergabe steht der persönliche Anspruch an
-            Material, Ausführung und Ergebnis im Mittelpunkt.
+            Gute Oberflächen verändern nicht nur einen Raum. Sie verändern, wie er sich
+            anfühlt. Genau deshalb verbinden wir sauberes Handwerk mit einem sicheren Gespür
+            für Farben, Materialien und Details.
           </p>
         </div>
       </div>

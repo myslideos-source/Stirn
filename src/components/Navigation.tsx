@@ -64,8 +64,8 @@ export function Navigation() {
             scrolled ? "py-3" : "py-5 sm:py-7"
           }`}
         >
-          <a href="#top" className="shrink-0" aria-label="STIRN. Malerbetrieb — Startseite">
-            <Logo tone="dark" priority />
+          <a href="#top" className="shrink-0" aria-label="BRUNNER. Malermeister — Startseite">
+            <Logo tone="dark" />
           </a>
 
           <ul className="hidden items-center gap-9 lg:flex">
@@ -96,7 +96,7 @@ export function Navigation() {
               <Phone className="h-3.5 w-3.5" strokeWidth={1.75} aria-hidden />
               {site.phone.display}
             </a>
-            <CoatingLink href="#anfrage" className="text-[0.85rem]">
+            <CoatingLink href="#kontakt" className="text-[0.85rem]">
               Projekt anfragen
             </CoatingLink>
           </div>
@@ -145,7 +145,7 @@ export function Navigation() {
                 ))}
               </ul>
               <div className="mt-6 flex flex-col gap-3">
-                <CoatingLink href="#anfrage" className="w-full" >
+                <CoatingLink href="#kontakt" className="w-full" >
                   Projekt anfragen
                 </CoatingLink>
                 <CoatingLink href={site.phone.href} variant="outline" className="w-full">

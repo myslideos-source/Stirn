@@ -4,13 +4,13 @@ import { site } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Datenschutz",
-  description: "Datenschutzerklärung des Jürgen Stirn Malerbetrieb in Fichtenau.",
+  description: "Datenschutzerklärung von Markus Brunner Malermeister in Crailsheim-Tiefenbach.",
   alternates: { canonical: "/datenschutz" },
   robots: { index: true, follow: true },
 };
 
 function Placeholder({ children }: { children: React.ReactNode }) {
-  return <span className="bg-terracotta/10 px-1 py-0.5 text-terracotta">{children}</span>;
+  return <span className="bg-amber-100 px-1 py-0.5 text-amber-900">{children}</span>;
 }
 
 function H2({ children }: { children: React.ReactNode }) {
@@ -21,11 +21,10 @@ export default function DatenschutzPage() {
   return (
     <LegalPageShell title="Datenschutzerklärung">
       <div className="space-y-8 text-[0.98rem] leading-relaxed text-anthracite/80">
-        <p className="border border-terracotta/30 bg-terracotta/[0.06] px-4 py-3 text-[0.88rem] text-anthracite">
+        <p className="border border-amber-300 bg-amber-50 px-4 py-3 text-[0.88rem] text-anthracite">
           Diese Datenschutzerklärung beschreibt den aktuellen technischen Stand der Webseite.
-          <Placeholder> Orange markierte</Placeholder> Abschnitte sind vor Veröffentlichung final
-          zu prüfen, insbesondere sobald ein E-Mail-Versanddienst für das Kontaktformular
-          angebunden wird.
+          <Placeholder> Gelb markierte</Placeholder> Abschnitte sind vor Veröffentlichung final
+          zu prüfen.
         </p>
 
         <section>
@@ -64,40 +63,33 @@ export default function DatenschutzPage() {
         </section>
 
         <section>
-          <H2>4. Projektanfrage-Formular</H2>
+          <H2>4. Kontaktformular</H2>
           <p className="mt-3">
-            Wenn Sie das Formular „Projekt anfragen“ nutzen, werden die von Ihnen eingegebenen
-            Daten (z. B. Projektart, Zeitrahmen, Ort/Postleitzahl, Beschreibung, optionale
-            Bilder, Name, Telefonnummer, E-Mail-Adresse, bevorzugter Kontaktweg) verarbeitet, um
-            Ihre Anfrage zu bearbeiten und Sie zu kontaktieren. Die Übermittlung erfolgt nur, wenn
-            Sie der Verarbeitung aktiv zugestimmt haben (Checkbox). Rechtsgrundlage ist Art. 6
-            Abs. 1 lit. b und lit. a DSGVO.
-          </p>
-          <p className="mt-3">
-            <Placeholder>
-              Hinweis für die Umsetzung: Der E-Mail-Versand des Formulars ist derzeit technisch
-              noch nicht mit einem E-Mail-Dienst verbunden (siehe Code-Dokumentation in
-              src/app/api/contact/route.ts). Sobald ein Dienst (z. B. Resend, Postmark, SMTP)
-              angebunden wird, ist dieser Abschnitt um den Namen des Dienstleisters, dessen
-              Serverstandort und ggf. einen Auftragsverarbeitungsvertrag zu ergänzen.
-            </Placeholder>
+            Das Kontaktformular im Bereich „Kontakt“ überträgt Ihre Eingaben nicht an einen
+            Server. Beim Absenden öffnet Ihr Browser stattdessen Ihr lokal eingerichtetes
+            E-Mail-Programm mit einer vorausgefüllten Nachricht an {site.email.display}. Diese
+            Nachricht sehen Sie vor dem Versand vollständig und senden sie eigenständig über
+            Ihr E-Mail-Programm ab — an diesem Punkt gelten die Datenschutzhinweise Ihres
+            E-Mail-Anbieters. Es findet keine Speicherung Ihrer Eingaben auf dieser Webseite
+            statt.
           </p>
         </section>
 
         <section>
-          <H2>5. Landkarte (OpenStreetMap)</H2>
+          <H2>5. Google Maps</H2>
           <p className="mt-3">
-            Im Kontaktbereich kann optional eine Standortkarte von OpenStreetMap eingeblendet
-            werden. Diese wird ausschließlich geladen, wenn Sie aktiv auf „Karte anzeigen“
-            klicken. Dabei kann eine Verbindung zu Servern der OpenStreetMap Foundation
-            hergestellt und Ihre IP-Adresse übertragen werden. Weitere Informationen:{" "}
+            Der Link „Route öffnen“ im Kontaktbereich führt zu Google Maps
+            (maps.google.com) und öffnet sich in einem neuen Tab. Es werden dabei keine
+            Inhalte von Google in diese Webseite eingebettet oder automatisch nachgeladen —
+            eine Verbindung zu Google-Servern entsteht erst, wenn Sie den Link aktiv anklicken.
+            Informationen zum Datenschutz bei Google finden Sie unter{" "}
             <a
-              href="https://osmfoundation.org/wiki/Privacy_Policy"
+              href="https://policies.google.com/privacy"
               target="_blank"
               rel="noopener noreferrer"
               className="underline underline-offset-2"
             >
-              osmfoundation.org/wiki/Privacy_Policy
+              policies.google.com/privacy
             </a>
             .
           </p>
@@ -110,15 +102,6 @@ export default function DatenschutzPage() {
             Verarbeitung, Datenübertragbarkeit sowie Widerspruch gegen die Verarbeitung Ihrer
             personenbezogenen Daten. Wenden Sie sich hierzu an die oben genannte Kontaktadresse.
             Ihnen steht zudem ein Beschwerderecht bei einer Datenschutzaufsichtsbehörde zu.
-          </p>
-        </section>
-
-        <section>
-          <H2>7. Speicherdauer</H2>
-          <p className="mt-3">
-            Über das Kontaktformular übermittelte Daten werden nur so lange gespeichert, wie es
-            zur Bearbeitung Ihrer Anfrage erforderlich ist, sofern keine gesetzlichen
-            Aufbewahrungspflichten entgegenstehen.
           </p>
         </section>
       </div>

@@ -15,7 +15,7 @@ export function LegalPageShell({
       <header className="border-b border-anthracite/10 bg-chalk">
         <div className="container-edge flex items-center justify-between py-6">
           <Link href="/" aria-label="Zur Startseite">
-            <Logo tone="dark" priority />
+            <Logo tone="dark" />
           </Link>
           <Link
             href="/"

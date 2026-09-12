@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Phone, FileEdit } from "lucide-react";
+import { Phone, Send } from "lucide-react";
 import { site } from "@/content/site";
 
 /**
@@ -23,11 +23,11 @@ export function MobileActionBar() {
           Anrufen
         </a>
         <Link
-          href="/#anfrage"
+          href="/#kontakt"
           className="flex items-center justify-center gap-2 bg-anthracite py-4 text-[0.88rem] font-medium text-chalk"
         >
-          <FileEdit className="h-4 w-4" strokeWidth={1.75} aria-hidden />
-          Projekt anfragen
+          <Send className="h-4 w-4" strokeWidth={1.75} aria-hidden />
+          Anfrage senden
         </Link>
       </div>
     </div>

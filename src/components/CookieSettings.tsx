@@ -5,10 +5,9 @@ import { X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
 /**
- * Diese Seite setzt standardmäßig keine Tracking- oder Marketing-Cookies.
- * Die einzige optionale externe Einbindung ist die OpenStreetMap-Karte im
- * Kontaktbereich, die erst nach aktivem Klick auf "Karte anzeigen" geladen
- * wird und dabei Cookies/Anfragen von openstreetmap.org auslösen kann.
+ * Diese Seite setzt keine Tracking- oder Marketing-Cookies. Der einzige
+ * externe Link (Google Maps im Kontaktbereich) öffnet erst nach einem
+ * aktiven Klick in einem neuen Tab und lädt selbst nichts nach.
  */
 export function CookieSettingsButton() {
   const [open, setOpen] = useState(false);
@@ -49,10 +48,9 @@ export function CookieSettingsButton() {
                 </button>
               </div>
               <p className="mt-4 text-[0.88rem] leading-relaxed text-anthracite/70">
-                Diese Webseite verwendet keine Tracking- oder Marketing-Cookies. Die einzige
-                optionale Einbindung ist die Standortkarte (OpenStreetMap) im Kontaktbereich —
-                diese wird ausschließlich geladen, wenn Sie dort aktiv auf „Karte anzeigen“
-                klicken. Details finden Sie in der{" "}
+                Diese Webseite verwendet keine Tracking- oder Marketing-Cookies. Der Link
+                „Route öffnen“ im Kontaktbereich führt zu Google Maps in einem neuen Tab und
+                lädt selbst keine Inhalte nach. Details finden Sie in der{" "}
                 <a href="/datenschutz" className="underline underline-offset-2">
                   Datenschutzerklärung
                 </a>

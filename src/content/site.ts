@@ -5,50 +5,47 @@
  */
 
 export const site = {
-  brandName: "STIRN.",
-  brandSuffix: "MALERBETRIEB · FICHTENAU",
-  legalName: "Jürgen Stirn Malerbetrieb",
-  owner: "Jürgen Stirn",
+  brandName: "BRUNNER.",
+  brandSuffix: "MALERMEISTER · CRAILSHEIM",
+  legalName: "Markus Brunner Malermeister",
+  owner: "Markus Brunner",
 
   address: {
-    street: "Grenzstraße 39",
-    zip: "74579",
-    city: "Fichtenau",
+    street: "Seeweg 5/1",
+    zip: "74564",
+    city: "Crailsheim-Tiefenbach",
     region: "Baden-Württemberg",
     country: "DE",
   },
 
   phone: {
-    display: "07962 421",
-    href: "tel:+497962421",
+    display: "07951 295158",
+    href: "tel:+497951295158",
+  },
+
+  fax: {
+    display: "07951 294351",
   },
 
   email: {
-    display: "sabine.stirn@t-online.de",
-    href: "mailto:sabine.stirn@t-online.de",
+    display: "m.brunner@malerbetrieb-brunner.de",
+    href: "mailto:m.brunner@malerbetrieb-brunner.de",
   },
 
-  // Platzhalter — vor Veröffentlichung durch die endgültige Domain ersetzen.
-  url: "https://www.stirn-malerbetrieb.de",
+  // Reale, vom Betrieb genannte Domain.
+  url: "https://www.malerbetrieb-brunner.de",
 
-  // Ausschließlich bestätigte Bewertungen — keine Erfindung einzelner Stimmen.
-  rating: {
-    value: 5.0,
-    count: 5,
-    source: "Malerfinder.de",
-    // Platzhalter — vor Veröffentlichung mit dem tatsächlichen Profil-Link abgleichen.
-    sourceUrl: "https://www.malerfinder.de/",
-  },
+  serviceArea: "Crailsheim und Umgebung",
 
-  social: {
-    // Platzhalter — nur eintragen, sobald vom Betrieb bestätigt.
-  },
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=" +
+    encodeURIComponent("Seeweg 5/1, 74564 Crailsheim-Tiefenbach"),
 
   nav: [
     { label: "Leistungen", href: "#leistungen" },
-    { label: "Projekte", href: "#projekte" },
+    { label: "Arbeiten", href: "#arbeiten" },
     { label: "Über uns", href: "#ueber-uns" },
-    { label: "Ablauf", href: "#ablauf" },
+    { label: "Kontakt", href: "#kontakt" },
   ],
 
   legalNav: [

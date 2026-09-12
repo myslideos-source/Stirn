@@ -17,7 +17,7 @@ export function ProcessSteps() {
       <div className="container-edge">
         <LineReveal
           as="h2"
-          lines={["So wird aus einer Idee", "ein sauberes Ergebnis."]}
+          lines={["Einfach und", <span key="accent" className="font-accent">persönlich.</span>]}
           className="max-w-2xl text-balance font-display text-3xl font-extrabold tracking-tight text-anthracite sm:text-4xl md:text-5xl"
         />
 

@@ -4,14 +4,14 @@ import { site } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Impressum",
-  description: "Impressum des Jürgen Stirn Malerbetrieb in Fichtenau.",
+  description: "Impressum von Markus Brunner Malermeister in Crailsheim-Tiefenbach.",
   alternates: { canonical: "/impressum" },
   robots: { index: true, follow: true },
 };
 
 function Placeholder({ children }: { children: React.ReactNode }) {
   return (
-    <span className="bg-terracotta/10 px-1 py-0.5 text-terracotta">
+    <span className="bg-amber-100 px-1 py-0.5 text-amber-900">
       {children}
     </span>
   );
@@ -21,9 +21,9 @@ export default function ImpressumPage() {
   return (
     <LegalPageShell title="Impressum">
       <div className="space-y-8 text-[0.98rem] leading-relaxed text-anthracite/80">
-        <p className="border border-terracotta/30 bg-terracotta/[0.06] px-4 py-3 text-[0.88rem] text-anthracite">
+        <p className="border border-amber-300 bg-amber-50 px-4 py-3 text-[0.88rem] text-anthracite">
           Diese Seite enthält an mehreren Stellen deutlich markierte Platzhalter
-          (<Placeholder>orange hinterlegt</Placeholder>). Diese Angaben sind gesetzlich
+          (<Placeholder>gelb hinterlegt</Placeholder>). Diese Angaben sind gesetzlich
           verpflichtend und müssen vor Veröffentlichung der Webseite mit dem Betrieb
           abgeklärt und ergänzt werden.
         </p>
@@ -45,6 +45,8 @@ export default function ImpressumPage() {
           <h2 className="font-display text-lg font-bold text-anthracite">Kontakt</h2>
           <p className="mt-3">
             Telefon: {site.phone.display}
+            <br />
+            Fax: {site.fax.display}
             <br />
             E-Mail: {site.email.display}
           </p>
